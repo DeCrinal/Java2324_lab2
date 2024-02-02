@@ -65,3 +65,76 @@
 
 
 Этот класс реализует интерфейс ```Iterator<T>``` и предоставляет методы для итерирования по ```MyLinkedList``` в прямом или обратном направлении. Он поддерживает ссылку mCurrentNode на текущий обрабатываемый узел. Метод ```value()``` возвращает данные текущего узла, а методы ```hasNext()``` и ```hasPrevious()``` указывают, есть ли еще элементы для обработки в прямом или обратном направлении соответственно. Метод ```next()``` перемещает **mCurrentNode** к следующему узлу и возвращает его данные, а метод ```previous()``` перемещает mCurrentNode к предыдущему узлу и возвращает его данные.
+
+<h2> Проверка работоспособности</h2>
+Для проверки работоспособности программы в классе Main использованы реализованные методы:
+
+```public class Main {
+	public static void main(String[] args) {
+		MyLinkedList<Integer> testList = new MyLinkedList<Integer>();
+		for(int i = 0; i < 6; i++) {
+			testList.addLast(i);
+		}
+		testList.addFirst(5);
+		testList.addFirst(5);
+		System.out.println("Size:" + testList.size());
+		System.out.println("-----Elements:--------");
+		for(Integer el : testList) {
+			System.out.println(el);
+		}
+		System.out.println("----------------------");
+		
+		testList.remove(5);
+		System.out.println("-----Removed (5):-----");
+		for(Integer el : testList) {
+			System.out.println(el);
+		}
+		System.out.println("----------------------");
+	}
+}
+```
+Также реализован класс для тестов:
+
+```
+class MyTestClass {
+
+	@Test
+    public void addFirst() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        linkedList.addFirst(1);
+        assertEquals(1, linkedList.getFirst());
+    }
+
+    @Test
+    public void addLast() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        linkedList.addLast(1);
+        assertEquals(1, linkedList.getLast());
+    }
+
+    @Test
+    public void removeFirst() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        linkedList.addFirst(1);
+        linkedList.removeFirst();
+        assertEquals(0, linkedList.size());
+    }
+
+    @Test
+    public void removeLast() {
+        MyLinkedList<Integer> linkedList = new MyLinkedList<>();
+        linkedList.addFirst(1);
+        linkedList.removeLast();
+        assertEquals(0, linkedList.size());
+    }
+}
+
+```
+
+
+<h2> </h2>
+<h1>Результат работы программы</h1>
+Вывод после работы main:
+![Java2324_res](https://github.com/DeCrinal/Java2324_lab2/assets/33785931/0a1dac8a-9ba0-4a8d-919c-6095b40c413b)
+Результат прохождения тестов:
+![Java2324_test](https://github.com/DeCrinal/Java2324_lab2/assets/33785931/4fee7153-52cb-4d5e-ae0a-4dfd686a4385)
