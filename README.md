@@ -135,6 +135,10 @@ class MyTestClass {
 <h2> </h2>
 <h1>Результат работы программы</h1>
 Вывод после работы main:
-![Java2324_res](https://github.com/DeCrinal/Java2324_lab2/assets/33785931/0a1dac8a-9ba0-4a8d-919c-6095b40c413b)
+<image 
+	src = "Java2324_res.png"
+	></image>
 Результат прохождения тестов:
-![Java2324_test](https://github.com/DeCrinal/Java2324_lab2/assets/33785931/4fee7153-52cb-4d5e-ae0a-4dfd686a4385)
+<image 
+	src = "Java2324_test.png">
+</image>
